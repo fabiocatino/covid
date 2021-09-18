@@ -1,0 +1,11 @@
+.searchBar {
+  margin-bottom: 0.23rem;
+  width: 25%;
+}
+
+@media all and (max-width:738px) {
+  .searchBar {
+    margin-bottom: 0.23rem;
+    width: 55%;
+  }
+}

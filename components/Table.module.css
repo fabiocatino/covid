@@ -1,0 +1,18 @@
+.table td,
+.table th,
+.table tr {
+  border: 1px solid rgb(206, 206, 206);
+  margin-bottom: 150px;
+}
+
+.table td {
+  padding: 11px;
+}
+
+.table tr:hover  {
+  background-color: rgb(187, 185, 185);
+}
+
+.update {
+  color: red;
+}
