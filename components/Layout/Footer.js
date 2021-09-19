@@ -24,6 +24,7 @@ export default function StickyFooter() {
         py: 3,
         px: 2,
         mt: 3,
+        width: '100%',
         backgroundColor: (theme) =>
           theme.palette.mode === 'light'
             ? theme.palette.grey[200]

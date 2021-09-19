@@ -1,6 +1,11 @@
 import React from 'react';
 import Navbar from './Navbar';
-import { ThemeProvider, createTheme, Paper, Box } from '@mui/material';
+import {
+  ThemeProvider,
+  createTheme,
+  Paper,
+  Box,
+} from '@mui/material';
 import { useState } from 'react';
 import styles from './Layout.module.css';
 import StickyFooter from './Footer';
@@ -11,7 +16,7 @@ import Fab from '@mui/material/Fab';
 
 export function ScrollTop(props) {
   const { children, window } = props;
- 
+
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
@@ -44,7 +49,6 @@ export function ScrollTop(props) {
 }
 
 const Layout = (props) => {
-
   const [darkMode, setDarkMode] = useState(
     createTheme({
       palette: {

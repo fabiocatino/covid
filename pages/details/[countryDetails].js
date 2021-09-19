@@ -36,13 +36,7 @@ const CountryDetails = () => {
     day: '2-digit',
   });
 
-  const prevDate = new Date(
-    new Date().valueOf() - 1000 * 60 * 60 * 24
-  ).toLocaleDateString('en-CA', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  });
+
 
   const date = new Date().toLocaleDateString('en-CA', {
     year: 'numeric',
@@ -115,7 +109,6 @@ const CountryDetails = () => {
     );
   }, [
     countryName,
-    prevDate,
     urlDate,
     getGlobalData,
     transformedData,
