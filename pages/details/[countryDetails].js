@@ -6,13 +6,12 @@ import useSort from '../../hooks/sort';
 import CircularProgress from '@mui/material/CircularProgress';
 import useHttp from '../../hooks/http';
 import Search from '../../components/Search';
-// import { Alert, AlertTitle } from '@mui/material';
 import Head from 'next/head';
 import LineChart from '../../components/LineChart';
 
 const CountryDetails = () => {
   const router = useRouter();
-  const countryName = router.query.countryDetails;
+  let countryName = router.query.countryDetails;
   const [dailyData, setDailyData] = useState([]);
   const { isLoading, error, sendHttp: getGlobalData } = useHttp();
   const {
@@ -28,6 +27,7 @@ const CountryDetails = () => {
   const [historicalDeaths, setHistoricalDeaths] = useState([]);
   const [activeCases, setActiveCases] = useState([]);
   const [activeDeaths, setActiveDeaths] = useState([]);
+
   const urlDate = new Date(
     new Date().valueOf() - 1000 * 60 * 60 * 48
   ).toLocaleDateString('en-CA', {
@@ -35,8 +35,6 @@ const CountryDetails = () => {
     month: '2-digit',
     day: '2-digit',
   });
-
-
 
   const date = new Date().toLocaleDateString('en-CA', {
     year: 'numeric',
@@ -107,15 +105,11 @@ const CountryDetails = () => {
       },
       transformedData
     );
-  }, [
-    countryName,
-    urlDate,
-    getGlobalData,
-    transformedData,
-    isProvince,
-  ]);
+  }, [countryName, urlDate, getGlobalData, transformedData, isProvince]);
 
   useEffect(() => {
+    console.log(countryName);
+
     getHistoricalData(
       {
         url: `https://corona.lmao.ninja/v2/historical/${countryName}?lastdays=90`,

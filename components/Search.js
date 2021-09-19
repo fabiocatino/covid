@@ -11,17 +11,17 @@ const Search = (props) => {
       .filter(
         (item) =>
           (item.country
-            ? item.country.toLowerCase().includes(e.target.value)
+            ? item.country.toLowerCase().includes(e.target.value.toLowerCase())
             : null) ||
           (item.Country
-            ? item.Country.toLowerCase().includes(e.target.value)
+            ? item.Country.toLowerCase().includes(e.target.value.toLowerCase())
             : null) ||
           (item.Province
-            ? item.Province.toLowerCase().includes(e.target.value)
+            ? item.Province.toLowerCase().includes(e.target.value.toLowerCase())
             : null) ||
-          (item.country ? item.country.includes(e.target.value) : null) ||
-          (item.Country ? item.Country.includes(e.target.value) : null) ||
-          (item.Province ? item.Province.includes(e.target.value) : null)
+          (item.country ? item.country.includes(e.target.value.toLowerCase()) : null) ||
+          (item.Country ? item.Country.includes(e.target.value.toLowerCase()) : null) ||
+          (item.Province ? item.Province.includes(e.target.value.toLowerCase()) : null)
       )
       .map((item) => filteredData.push(item));
     props.onAddFilter(filteredData);

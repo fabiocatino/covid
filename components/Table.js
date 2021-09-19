@@ -143,11 +143,21 @@ const Table = (props) => {
           {router.asPath === '/' && (
             <tr>
               <td>Total</td>
-              <td><strong>{overallTotal.toLocaleString("en-US")}</strong></td>
-              <td><strong>{overallDeaths.toLocaleString("en-US")}</strong></td>
-              <td><strong>{overallNewCases.toLocaleString("en-US")}</strong></td>
-              <td><strong>{overallNewDeaths.toLocaleString("en-US")}</strong></td>
-              <td><strong>{overallTestDone.toLocaleString("en-US")}</strong></td>
+              <td>
+                <strong>{overallTotal.toLocaleString('en-US')}</strong>
+              </td>
+              <td>
+                <strong>{overallDeaths.toLocaleString('en-US')}</strong>
+              </td>
+              <td>
+                <strong>{overallNewCases.toLocaleString('en-US')}</strong>
+              </td>
+              <td>
+                <strong>{overallNewDeaths.toLocaleString('en-US')}</strong>
+              </td>
+              <td>
+                <strong>{overallTestDone.toLocaleString('en-US')}</strong>
+              </td>
             </tr>
           )}
           {(rowsPerPage > 0
@@ -158,10 +168,10 @@ const Table = (props) => {
             : props.data
           ).map((item) => (
             <tr key={item[props._id]}>
-              <td>
+              <td className={styles.link}>
                 {props.mainLink ? (
                   <Link href={`/details/${item[props.mainLink]}`}>
-                    {item[props.field1]}
+                    <strong>{item[props.field1]}</strong>
                   </Link>
                 ) : (
                   item[props.field1]
@@ -170,19 +180,31 @@ const Table = (props) => {
               <td>
                 <strong>{item[props.field2].toLocaleString('en-US')}</strong>
               </td>
-              <td><strong>{item[props.field3].toLocaleString('en-US')}</strong></td>
-              <td><strong>{item[props.field4].toLocaleString('en-US')}</strong></td>
+              <td>
+                <strong>{item[props.field3].toLocaleString('en-US')}</strong>
+              </td>
+              <td>
+                <strong>{item[props.field4].toLocaleString('en-US')}</strong>
+              </td>
               {props.header5 ? (
-                <td><strong>{item[props.field5].toLocaleString('en-US')}</strong></td>
+                <td>
+                  <strong>{item[props.field5].toLocaleString('en-US')}</strong>
+                </td>
               ) : null}
               {props.header6 ? (
-                <td><strong>{item[props.field6].toLocaleString('en-US')}</strong></td>
+                <td>
+                  <strong>{item[props.field6].toLocaleString('en-US')}</strong>
+                </td>
               ) : null}
               {props.header7 ? (
-                <td><strong>{item[props.field2].toLocaleString('en-US')}</strong></td>
+                <td>
+                  <strong>{item[props.field2].toLocaleString('en-US')}</strong>
+                </td>
               ) : null}
               {props.header8 ? (
-                <td><strong>{item[props.field8].toLocaleString('en-US')}</strong></td>
+                <td>
+                  <strong>{item[props.field8].toLocaleString('en-US')}</strong>
+                </td>
               ) : null}
             </tr>
           ))}
