@@ -25,7 +25,7 @@ export default function StickyFooter() {
         px: 2,
         pd: 3,
         width: '100%',
-        position: 'absolute',
+        // position: 'absolute',
         bottom: 0,
         backgroundColor: (theme) =>
           theme.palette.mode === 'light'

@@ -151,14 +151,14 @@ const CountryDetails = () => {
           Something went wrong. Please, try again later.
         </Container>
       )}
-      {isLoading && !error && (
-        <Container
+        {isLoading && !error && 
+      <Container
           maxWidth="lg"
           sx={{ marginTop: '10rem', display: 'flex', justifyContent: 'center' }}
         >
-          <CircularProgress size="5rem" />
+         <CircularProgress size="5rem" />
         </Container>
-      )}
+    }
       {!isLoading && (
         <Container maxWidth="lg" sx={{ marginTop: '10rem' }}>
           <Search countries={dailyData} onAddFilter={filterHandler}></Search>
