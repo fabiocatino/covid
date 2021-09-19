@@ -65,11 +65,10 @@ const Layout = (props) => {
     <ThemeProvider theme={darkMode}>
       <Paper className={styles.paper}>
         <Navbar onAddTheme={darkModeHandler} />
-        <StickyFooter></StickyFooter>
-        <Container sx={{ paddingBottom: 15}}>
+        <Container className={styles.footer}>
           <main>{props.children}</main>
         </Container>
-
+        <StickyFooter className={styles.footer}></StickyFooter>
         <ScrollTop {...props}>
           <Fab color="primary" size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
