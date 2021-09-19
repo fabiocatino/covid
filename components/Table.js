@@ -168,10 +168,10 @@ const Table = (props) => {
             : props.data
           ).map((item) => (
             <tr key={item[props._id]}>
-              <td className={styles.link}>
+              <td >
                 {props.mainLink ? (
-                  <Link href={`/details/${item[props.mainLink]}`}>
-                    <strong>{item[props.field1]}</strong>
+                  <Link  href={`/details/${item[props.mainLink]}`}>
+                    <strong className={styles.link}>{item[props.field1]}</strong>
                   </Link>
                 ) : (
                   item[props.field1]
