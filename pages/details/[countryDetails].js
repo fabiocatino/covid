@@ -143,12 +143,12 @@ const CountryDetails = () => {
         <title>{router.query.countryDetails}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {isLoading && (
+      {error && (
         <Container
           maxWidth="lg"
           sx={{ marginTop: '10rem', display: 'flex', justifyContent: 'center' }}
         >
-          {error && 'Something went wrong'}
+          {error && 'Something went wrong. Please, try again later.'}
           {isLoading && !error && <CircularProgress size="5rem" />}
         </Container>
       )}

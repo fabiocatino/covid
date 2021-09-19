@@ -5,6 +5,7 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
+  /* min-height: 100vh; */
 }
 
 a {
@@ -15,8 +16,20 @@ a {
 * {
   box-sizing: border-box;
 }
-
+/* 
 .css-py727u-MuiContainer-root {
   min-height: 100vh;
-  position: relative;
 }
+
+.css-tg6w55 {
+  position: relative;
+  bottom: 0;
+} */
+/* .MuiPaper-root {
+  min-width: fit-content;
+  position: relative;
+  height: 100%;
+} */
+/* .MuiDrawer-paper {
+  z-index: 1300;
+} */

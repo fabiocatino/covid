@@ -5,6 +5,7 @@ import {
   createTheme,
   Paper,
   Box,
+  Container,
 } from '@mui/material';
 import { useState } from 'react';
 import styles from './Layout.module.css';
@@ -64,13 +65,16 @@ const Layout = (props) => {
     <ThemeProvider theme={darkMode}>
       <Paper className={styles.paper}>
         <Navbar onAddTheme={darkModeHandler} />
-        <main>{props.children}</main>
+        <StickyFooter></StickyFooter>
+        <Container sx={{ paddingBottom: 15}}>
+          <main>{props.children}</main>
+        </Container>
+
         <ScrollTop {...props}>
           <Fab color="primary" size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
           </Fab>
         </ScrollTop>
-        <StickyFooter></StickyFooter>
       </Paper>
     </ThemeProvider>
   );

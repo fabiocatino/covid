@@ -31,7 +31,7 @@ const PieChart = (props) => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container  maxWidth="sm">
       <div className="header">
         <h1 className="title">{props.title}</h1>
         <div className="links">

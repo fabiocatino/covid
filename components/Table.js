@@ -60,7 +60,6 @@ const Table = (props) => {
                 )}
               </Button>
             </th>
-
             <th>
               {props.header2}
               <Button onClick={props.sortHandler2}>
@@ -168,10 +167,12 @@ const Table = (props) => {
             : props.data
           ).map((item) => (
             <tr key={item[props._id]}>
-              <td >
+              <td>
                 {props.mainLink ? (
-                  <Link  href={`/details/${item[props.mainLink]}`}>
-                    <strong className={styles.link}>{item[props.field1]}</strong>
+                  <Link href={`/details/${item[props.mainLink]}`}>
+                    <strong className={styles.link}>
+                      {item[props.field1]}
+                    </strong>
                   </Link>
                 ) : (
                   item[props.field1]
