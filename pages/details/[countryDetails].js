@@ -148,8 +148,15 @@ const CountryDetails = () => {
           maxWidth="lg"
           sx={{ marginTop: '10rem', display: 'flex', justifyContent: 'center' }}
         >
-          {error && 'Something went wrong. Please, try again later.'}
-          {isLoading && !error && <CircularProgress size="5rem" />}
+          Something went wrong. Please, try again later.
+        </Container>
+      )}
+      {isLoading && !error && (
+        <Container
+          maxWidth="lg"
+          sx={{ marginTop: '10rem', display: 'flex', justifyContent: 'center' }}
+        >
+          <CircularProgress size="5rem" />
         </Container>
       )}
       {!isLoading && (
@@ -183,6 +190,18 @@ const CountryDetails = () => {
             </Container>
           )}
           {isHError && <p>Cannot load data. Please, try again later.</p>}
+          {!isLoading && historicalData.length === 0 && (
+            <Container
+              maxWidth="lg"
+              sx={{
+                marginTop: '10rem',
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <p>No data found.</p>
+            </Container>
+          )}
         </Container>
       )}
     </>
