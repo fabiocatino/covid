@@ -2,6 +2,7 @@ import Layout from '../components/Layout/Layout';
 import Head from 'next/head';
 import '../styles/globals.css';
 import { StyledEngineProvider } from '@mui/material/styles';
+import StickyFooter from '../components/Layout/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <Component {...pageProps} />
       </Layout>
+      <StickyFooter className="footer"></StickyFooter>
     </StyledEngineProvider>
   );
 }

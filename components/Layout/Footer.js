@@ -23,10 +23,8 @@ export default function StickyFooter() {
       sx={{
         py: 3,
         px: 2,
-        pd: 3,
+        mt: 5,
         width: '100%',
-        // position: 'absolute',
-        bottom: 0,
         backgroundColor: (theme) =>
           theme.palette.mode === 'light'
             ? theme.palette.grey[200]

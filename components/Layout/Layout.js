@@ -1,15 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
-import {
-  ThemeProvider,
-  createTheme,
-  Paper,
-  Box,
-  Container,
-} from '@mui/material';
+import { ThemeProvider, createTheme, Paper, Box } from '@mui/material';
 import { useState } from 'react';
 import styles from './Layout.module.css';
-import StickyFooter from './Footer';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
@@ -63,12 +56,9 @@ const Layout = (props) => {
 
   return (
     <ThemeProvider theme={darkMode}>
-      <Paper className={styles.paper}>
+      <Paper elevation={0} className={styles.paper}>
         <Navbar onAddTheme={darkModeHandler} />
-        <Container className={styles.footer}>
-          <main>{props.children}</main>
-        </Container>
-        <StickyFooter className={styles.footer}></StickyFooter>
+        <main className={styles.main}>{props.children}</main>
         <ScrollTop {...props}>
           <Fab color="primary" size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
